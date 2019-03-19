@@ -6,10 +6,10 @@ public class UserServiceImpl2 implements UserService {
 	private String tel;
 	private int age;
 	
-	public UserServiceImpl2() {
-		name = "½ºÇÁ¸µ";
-		tel = "010";
-		age = 20;
+	public UserServiceImpl2(String name, String tel, int age) {
+		this.name = name;
+		this.tel = tel;
+		this.age = age;
 	}
 	
 	@Override

@@ -14,10 +14,17 @@
         http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 	
 	<!-- 객체를 생성하는 태그 / 하나의 bean 태그가 객체 하나를 의미 -->
+	<!-- 객체는 단 한 번만 생성이 가능 / 아이디는 중복이 되면 안된다.  -->
 	<!-- 디폴트 생성자를 이용한 객체 생성 -->
-	<bean id="userService" class="com.di.UserServiceImpl2"/>
+	<!-- <bean id="userService" class="com.di.UserServiceImpl2"/> -->
+	<bean id="userService2" class="com.di.UserServiceImpl2">
+		<constructor-arg value="홍길동"/>
+		<constructor-arg value="010"/>
+		<constructor-arg value="13"/>
+	</bean>
+	
 	<bean id="user" class="com.di.UserBean">
-		<constructor-arg ref = "userService"/>
+		<constructor-arg ref="userService2"/>
 	</bean>	
 
 </beans>  
